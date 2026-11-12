@@ -1,0 +1,17 @@
+{
+  "_comment": "Rules enforced by nemesis/safety_validator.py. Nemesis can never send anything that breaks these rules.",
+  "max_events_per_scenario": 600,
+  "max_attacks_per_hour": 6,
+  "max_event_bytes": 4000,
+  "allowed_domain_suffixes": [
+    ".example", ".invalid", ".test", ".local", ".localhost",
+    "example.com", "example.org", "example.net"
+  ],
+  "blocked_scenarios": [],
+  "extra_accounts": [
+    "anonymous", "-", "root", "it.admin", "svc.provisioning", "svc.itautomation", "shiro.iam", "alice.iam"
+  ],
+  "extra_hosts": [
+    "aws-lab-account", "mail-gateway", "firewall-01", "dns-resolver-01", "fileserver-01"
+  ]
+}

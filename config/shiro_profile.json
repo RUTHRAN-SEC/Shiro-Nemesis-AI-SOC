@@ -1,0 +1,46 @@
+{
+  "_comment": "Everything here is FICTIONAL. ShiroTech does not exist. IPs are private (10.x) lab addresses.",
+  "company": "ShiroTech",
+  "employee": {
+    "employee_id": "EMP-001",
+    "name": "Shiro",
+    "department": "IT Operations",
+    "role": "IT Support Engineer",
+    "username": "shiro.user",
+    "email": "shiro@shirotech.local",
+    "workstation": "SHIRO-PC-001",
+    "workstation_ip": "10.10.10.21",
+    "country": "IN",
+    "status": "active"
+  },
+  "posture": {
+    "security_awareness": 60,
+    "mfa_enabled": true,
+    "patch_level": "current"
+  },
+  "coworkers": [
+    {"name": "Anika Rao", "username": "anika.rao", "role": "CEO"},
+    {"name": "Mateo Silva", "username": "mateo.silva", "role": "CFO"},
+    {"name": "Priya Nair", "username": "priya.nair", "role": "HR Manager"},
+    {"name": "Liam Chen", "username": "liam.chen", "role": "Developer"},
+    {"name": "Sofia Rossi", "username": "sofia.rossi", "role": "Accountant"},
+    {"name": "Omar Haddad", "username": "omar.haddad", "role": "Sales"},
+    {"name": "Hana Kim", "username": "hana.kim", "role": "Designer"},
+    {"name": "Noah Weber", "username": "noah.weber", "role": "Developer"},
+    {"name": "Zara Khan", "username": "zara.khan", "role": "Support"},
+    {"name": "Ethan Brown", "username": "ethan.brown", "role": "Sales"},
+    {"name": "Maya Patel", "username": "maya.patel", "role": "Marketing"},
+    {"name": "Lucas Dubois", "username": "lucas.dubois", "role": "Legal"},
+    {"name": "Isla Murphy", "username": "isla.murphy", "role": "Operations"},
+    {"name": "Arjun Mehta", "username": "arjun.mehta", "role": "Developer"},
+    {"name": "Chloe Martin", "username": "chloe.martin", "role": "Finance"}
+  ],
+  "servers": {
+    "domain_controller": {"host": "DC01", "ip": "10.10.10.5"},
+    "web_app": {"host": "web-app-01", "ip": "10.10.10.60"},
+    "file_server": {"host": "fileserver-01", "ip": "10.10.10.30"},
+    "scanner": {"host": "ITSCAN-01", "ip": "10.10.10.50"},
+    "cloud_account": {"host": "aws-lab-account", "account_id": "111122223333"}
+  },
+  "executives": ["Anika Rao (CEO)", "Mateo Silva (CFO)"]
+}

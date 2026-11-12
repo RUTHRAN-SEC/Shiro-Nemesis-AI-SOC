@@ -1,0 +1,24 @@
+# systemd service: starts Nemesis automatically when the Ubuntu laptop boots.
+# 1) Edit User= and the two paths below to match your laptop.
+# 2) sudo cp scripts/nemesis.service /etc/systemd/system/nemesis.service
+# 3) sudo systemctl daemon-reload && sudo systemctl enable --now nemesis
+# Watch the logs:  journalctl -u nemesis -f
+[Unit]
+Description=Nemesis - AI attacker for the Shiro SOC lab
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=babyboss
+WorkingDirectory=/home/babyboss/shiro-nemesis-ai-soc
+ExecStart=/home/babyboss/shiro-nemesis-ai-soc/.venv/bin/python -m nemesis.scheduler
+Restart=on-failure
+RestartSec=30
+# Extra safety: Nemesis only needs to write to its own folder
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=read-only
+ReadWritePaths=/home/babyboss/shiro-nemesis-ai-soc/data
+
+[Install]
+WantedBy=multi-user.target

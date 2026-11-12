@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guardian SOC - ShiroTech</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="dot"></span> GUARDIAN <small>SOC for ShiroTech</small></div>
+    <nav id="tabs">
+      <button data-tab="alerts" class="active">Alerts</button>
+      <button data-tab="overview">Overview</button>
+      <button data-tab="activity">Shiro activity</button>
+      <button data-tab="performance">Detection score</button>
+    </nav>
+    <div id="status" class="muted">connecting...</div>
+  </header>
+
+  <main>
+    <!-- ALERTS -->
+    <section id="tab-alerts" class="tab active">
+      <div class="split">
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Alert queue</h2>
+            <select id="filter">
+              <option value="">All</option>
+              <option value="open">Open</option>
+              <option value="investigating">Investigating</option>
+              <option value="closed_true_positive">Closed - real</option>
+              <option value="closed_false_positive">Closed - false alarm</option>
+            </select>
+          </div>
+          <div id="alert-list" class="list"></div>
+        </div>
+        <div class="panel" id="detail">
+          <p class="muted">Select an alert to investigate it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section id="tab-overview" class="tab">
+      <div id="cards" class="cards"></div>
+      <div class="grid2">
+        <div class="panel"><h2>Alerts by category</h2><div id="chart-cat"></div></div>
+        <div class="panel"><h2>MITRE ATT&amp;CK techniques seen</h2><div id="chart-tech"></div></div>
+        <div class="panel wide"><h2>Attack timeline (alerts per hour, UTC)</h2><div id="chart-time" class="bars"></div></div>
+      </div>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section id="tab-activity" class="tab">
+      <div class="panel">
+        <h2>Latest events from Shiro's environment</h2>
+        <p class="muted">Raw telemetry as Guardian receives it. Normal activity and attack evidence look alike - that is the challenge.</p>
+        <div id="activity" class="table-wrap"></div>
+      </div>
+    </section>
+
+    <!-- PERFORMANCE -->
+    <section id="tab-performance" class="tab">
+      <div class="panel">
+        <h2>How well is Guardian doing?</h2>
+        <div id="perf"></div>
+        <div class="reveal">
+          <button id="reveal-btn">Reveal answer key (what Nemesis really did)</button>
+          <p class="muted">Spoiler warning: finish investigating first, then peek.</p>
+        </div>
+        <div id="attack-log" class="table-wrap hidden"></div>
+      </div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
